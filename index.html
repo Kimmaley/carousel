@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>4-Image Flick Pause Carousel</title>
+<style>
+  .carousel {
+    width: 100%;
+    overflow: hidden;
+  }
+  .carousel-images {
+    display: flex;
+    width: 400%;
+    animation: slidePause 12s infinite;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+  .carousel-images li {
+    width: 25%;
+    flex-shrink: 0;
+  }
+  .carousel-images img {
+    width: 100%;
+    display: block;
+  }
+  @keyframes slidePause {
+    0%    { transform: translateX(0%); }
+    20%   { transform: translateX(0%); }
+    25%   { transform: translateX(-25%); }
+    45%   { transform: translateX(-25%); }
+    50%   { transform: translateX(-50%); }
+    70%   { transform: translateX(-50%); }
+    75%   { transform: translateX(-75%); }
+    95%   { transform: translateX(-75%); }
+    100%  { transform: translateX(0%); }
+  }
+</style>
+</head>
+<body>
+  <div class="carousel">
+    <ul class="carousel-images">
+      <li><img src="https://i.postimg.cc/mr6rw8vC/WBC-Function-Special-Web-Mailchimp.jpg" alt="Image 1"></li>
+      <li><img src="https://i.postimg.cc/59ztB5nQ/LR-Functions-25-Winter-Web-Mail-Chimp.png" alt="Image 2"></li>
+      <li><img src="https://i.postimg.cc/mr6rw8vC/WBC-Function-Special-Web-Mailchimp.jpg" alt="Image 1"></li>
+      <li><img src="https://i.postimg.cc/59ztB5nQ/LR-Functions-25-Winter-Web-Mail-Chimp.png" alt="Image 2"></li>  
+    </ul>
+  </div>
+</body>
+</html>
