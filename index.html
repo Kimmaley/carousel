@@ -6,49 +6,50 @@
   <title>Image Carousel</title>
   <style>
     html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      height: 100%;
-    }
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
 
-    .carousel {
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      position: relative;
-    }
+.carousel {
+  width: 100%;
+  height: auto; /* allow height to grow based on content */
+  overflow: hidden;
+  position: relative;
+}
 
-    .carousel-images {
-      display: flex;
-      width: 400%; /* 4 images */
-      height: 100%;
-      animation: slide 16s infinite;
-    }
+.carousel-images {
+  display: flex;
+  width: 400%; /* for 4 images */
+  animation: slide 16s infinite;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
 
-    .carousel-images li {
-      list-style: none;
-      flex: 1 0 100%;
-    }
+.carousel-images li {
+  flex: 1 0 100%;
+}
 
-    .carousel-images img {
-      width: 100vw;
-      height: 100vh;
-      object-fit: cover;
-      display: block;
-    }
-
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      20% { transform: translateX(0%); }
-      25% { transform: translateX(-100%); }
-      45% { transform: translateX(-100%); }
-      50% { transform: translateX(-200%); }
-      70% { transform: translateX(-200%); }
-      75% { transform: translateX(-300%); }
-      95% { transform: translateX(-300%); }
-      100% { transform: translateX(0%); }
-    }
+.carousel-images img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+@keyframes slide {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  45% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  70% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  95% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+   }
   </style>
 </head>
 <body>
@@ -62,3 +63,6 @@
   </div>
 </body>
 </html>
+
+
+
