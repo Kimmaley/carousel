@@ -1,61 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>2-Image Carousel</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      box-sizing: border-box;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Big Image Carousel</title>
+<style>
+  /* Reset */
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: #000; /* optional letterbox bg */
+  }
 
+  .carousel {
+    width: 100%;
+    max-width: 900px;   /* max width for big screens */
+    height: 450px;      /* set a nice fixed height */
+    margin: 20px auto;  /* center horizontally with some margin */
+    overflow: hidden;
+    position: relative;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  }
+
+  .carousel-images {
+    display: flex;
+    width: 400%; /* 4 images */
+    animation: slide 24s ease-in-out infinite;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .carousel-images li {
+    flex: 0 0 100%;
+  }
+
+  .carousel-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* show full image, no cropping */
+    display: block;
+  }
+
+  /* Animation timing - pause on each image, then slide */
+  @keyframes slide {
+    0%   { transform: translateX(0%); }
+    20%  { transform: translateX(0%); }
+    25%  { transform: translateX(-100%); }
+    45%  { transform: translateX(-100%); }
+    50%  { transform: translateX(-200%); }
+    70%  { transform: translateX(-200%); }
+    75%  { transform: translateX(-300%); }
+    95%  { transform: translateX(-300%); }
+    100% { transform: translateX(0%); }
+  }
+
+  /* Responsive for small screens */
+  @media (max-width: 600px) {
     .carousel {
-      width: 100%;
-      max-width: 400px;    /* control max width */
-      height: 300px;       /* fixed height that fits your images */
-      overflow: hidden;
-      margin: 0 auto;      /* center horizontally */
-      position: relative;
+      height: 250px;
+      max-width: 100%;
+      margin: 10px 0;
     }
-
-    .carousel-images {
-      display: flex;
-      width: 200%; /* 2 images * 100% */
-      animation: slide 10s infinite;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      transition-timing-function: ease-in-out;
-    }
-
-    .carousel-images li {
-      flex: 0 0 50%; /* each image takes 50% of the width */
-    }
-
-    .carousel-images img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;  /* shows full image without cropping */
-      display: block;
-      background-color: #000; /* optional letterbox background */
-    }
-
-    @keyframes slide {
-      0%   { transform: translateX(0%); }
-      40%  { transform: translateX(0%); }
-      50%  { transform: translateX(-50%); }
-      90%  { transform: translateX(-50%); }
-      100% { transform: translateX(0%); }
-    }
-  </style>
+  }
+</style>
 </head>
 <body>
   <div class="carousel">
     <ul class="carousel-images">
       <li><img src="https://i.postimg.cc/mr6rw8vC/WBC-Function-Special-Web-Mailchimp.jpg" alt="Image 1"></li>
       <li><img src="https://i.postimg.cc/59ztB5nQ/LR-Functions-25-Winter-Web-Mail-Chimp.png" alt="Image 2"></li>
+      <li><img src="https://i.postimg.cc/mr6rw8vC/WBC-Function-Special-Web-Mailchimp.jpg" alt="Image 3"></li>
+      <li><img src="https://i.postimg.cc/59ztB5nQ/LR-Functions-25-Winter-Web-Mail-Chimp.png" alt="Image 4"></li>
     </ul>
   </div>
 </body>
