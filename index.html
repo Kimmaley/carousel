@@ -42,11 +42,11 @@
 .carousel-images img {
   width: 100%;
   height: 100%;
-  object-fit: cover; /* fills area, crops if needed */
+  object-fit: cover;
+  object-position: center center; /* ensures image is centered */
   display: block;
-  background-color: transparent; /* remove black bg */
+  background-color: transparent;
 }
-
   /* Animation timing - pause on each image, then slide */
   @keyframes slide {
     0%   { transform: translateX(0%); }
