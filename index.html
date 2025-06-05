@@ -15,9 +15,12 @@
 
 .carousel {
   width: 100%;
-  height: 300px; /* 👈 Adjust as needed (e.g. 400px if your images are taller) */
+  height: 320px; /* adjust if needed */
   overflow: hidden;
   position: relative;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  box-sizing: border-box;
 }
 
 .carousel-images {
@@ -32,12 +35,12 @@
 .carousel-images li {
   flex: 0 0 100%;
 }
-
 .carousel-images img {
   width: 100%;
   height: 100%;
-  object-fit: contain; /* or 'contain' if you want full image visible */
+  object-fit: contain;  /* Show full image */
   display: block;
+  background-color: #000; /* Optional: letterbox background */
 }
 
 @keyframes slide {
