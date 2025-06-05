@@ -2,68 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Image Carousel</title>
-<style>
-  html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+  <title>2-Image Carousel</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-.carousel {
-  width: 100%;
-  height: 320px; /* adjust if needed */
-  overflow: hidden;
-  position: relative;
-  padding-left: 5vw;
-  padding-right: 5vw;
-  box-sizing: border-box;
-}
+    .carousel {
+      width: 100%;
+      max-width: 100%;
+      aspect-ratio: 16 / 9; /* Adjust as needed */
+      overflow: hidden;
+      position: relative;
+    }
 
-.carousel-images {
-  display: flex;
-  width: 400%;
-  animation: slide 24s ease-in-out infinite;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
+    .carousel-images {
+      display: flex;
+      width: 200%; /* Two images: 100% each */
+      animation: slide 12s ease-in-out infinite;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
 
-.carousel-images li {
-  flex: 0 0 100%;
-}
-.carousel-images img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;  /* Show full image */
-  display: block;
-  background-color: #000; /* Optional: letterbox background */
-}
+    .carousel-images li {
+      flex: 0 0 100%;
+    }
 
-@keyframes slide {
-  0%   { transform: translateX(0%); }
-  20%  { transform: translateX(0%); }
-  25%  { transform: translateX(-100%); }
-  45%  { transform: translateX(-100%); }
-  50%  { transform: translateX(-200%); }
-  70%  { transform: translateX(-200%); }
-  75%  { transform: translateX(-300%); }
-  95%  { transform: translateX(-300%); }
-  100% { transform: translateX(0%); }
-  }
-</style>
+    .carousel-images img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      background-color: #000;
+    }
+
+    @keyframes slide {
+      0%   { transform: translateX(0%); }
+      40%  { transform: translateX(0%); }
+      50%  { transform: translateX(-100%); }
+      90%  { transform: translateX(-100%); }
+      100% { transform: translateX(0%); }
+    }
+  </style>
 </head>
 <body>
   <div class="carousel">
     <ul class="carousel-images">
       <li><img src="https://i.postimg.cc/mr6rw8vC/WBC-Function-Special-Web-Mailchimp.jpg" alt="Image 1"></li>
       <li><img src="https://i.postimg.cc/59ztB5nQ/LR-Functions-25-Winter-Web-Mail-Chimp.png" alt="Image 2"></li>
-<li><img src="https://i.postimg.cc/mr6rw8vC/WBC-Function-Special-Web-Mailchimp.jpg" alt="Image 3"></li>
-      <li><img src="https://i.postimg.cc/59ztB5nQ/LR-Functions-25-Winter-Web-Mail-Chimp.png" alt="Image 4"></li>
-
     </ul>
   </div>
 </body>
