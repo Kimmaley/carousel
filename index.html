@@ -4,49 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Image Carousel</title>
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      overflow: hidden;
-    }
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow: hidden;
+  }
 
-    .carousel {
-      width: 100%;
-      max-height: 400px;
-      overflow: hidden;
-      position: relative;
-    }
+  .carousel {
+    width: 100%;
+    max-height: 400px;
+    overflow: hidden;
+    position: relative;
+  }
 
-    .carousel-images {
-      display: flex;
-      width: 400%; /* for 4 images */
-      animation: slide 16s infinite;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
+  .carousel-images {
+    display: flex;
+    width: 400%; /* 4 images */
+    animation: slide 20s infinite;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
 
-    .carousel-images li {
-      flex: 1 0 100%;
-    }
+  .carousel-images li {
+    flex: 1 0 100%;
+  }
 
-    .carousel-images img {
-      width: 100%;
-      max-height: 400px;
-      object-fit: contain;
-      display: block;
-    }
+  .carousel-images img {
+    width: 100%;
+    max-height: 400px;
+    object-fit: contain;
+    display: block;
+  }
 
-    @keyframes slide {
-      0%, 20% { transform: translateX(0%); }
-      25%, 45% { transform: translateX(-100%); }
-      50%, 70% { transform: translateX(-200%); }
-      75%, 95% { transform: translateX(-300%); }
-      100% { transform: translateX(0); }
-    }
-  </style>
+  /* Timing: 5s per image with 1s transition */
+  @keyframes slide {
+    0%   { transform: translateX(0%); }
+    20%  { transform: translateX(0%); }
+    25%  { transform: translateX(-100%); }
+    45%  { transform: translateX(-100%); }
+    50%  { transform: translateX(-200%); }
+    70%  { transform: translateX(-200%); }
+    75%  { transform: translateX(-300%); }
+    95%  { transform: translateX(-300%); }
+    100% { transform: translateX(0%); }
+  }
+</style>
 </head>
 <body>
   <div class="carousel">
