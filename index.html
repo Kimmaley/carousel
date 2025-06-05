@@ -3,28 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Responsive Image Carousel</title>
+  <title>Responsive Carousel</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       width: 100%;
-      height: 100%;
-      background: #fff; /* No black */
+      background: #fff;
     }
 
     .carousel {
       width: 100%;
-      max-width: 100%;
       height: auto;
-      aspect-ratio: 16 / 9; /* Or 4/3 if you prefer shorter */
+      max-width: 100%;
       overflow: hidden;
       position: relative;
     }
 
     .carousel-images {
       display: flex;
-      width: 400%;
+      width: 400%; /* for 4 images */
       animation: slide 24s ease-in-out infinite;
       margin: 0;
       padding: 0;
@@ -37,9 +35,8 @@
 
     .carousel-images img {
       width: 100%;
-      height: 100%;
-      object-fit: contain; /* show entire image */
-      object-position: center center;
+      height: auto;
+      object-fit: contain;
       display: block;
     }
 
